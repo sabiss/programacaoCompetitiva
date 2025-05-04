@@ -23,4 +23,3 @@ for i in range(casosdeTeste):
             print("YES")
         else:
             print("NO")
-

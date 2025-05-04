@@ -32,5 +32,3 @@ while(n!=0 and q!=0 ):
             print(f"{numAchar} not found")
         else:
             print(f"{numAchar} found at {res+1}")
-
-
