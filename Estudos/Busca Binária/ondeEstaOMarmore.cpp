@@ -1,62 +1,53 @@
+/* https://judge.beecrowd.com/pt/problems/view/1025 */
 #include <iostream>
 #include <vector>
 #include <algorithm>
 
 using namespace std;
 
-int main()
-{
-    vector<int> a;
+int main() {
+    int caso = 1;
+    int n, q;
 
-    int n, q = 1;
+    while (cin >> n >> q) {
+        if (n == 0 && q == 0)
+            break;
 
-    while (n != 0 && q != 0)
-    {
-        cin >> n, q;
-        for (int i = 0; i < n; i++)
-        {
-            int b;
-            cin >> b;
-            a.push_back(b);
+        vector<int> a(n);
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
         }
+
         sort(a.begin(), a.end());
-        for (int i = 0; i < q; i++)
-        {
+
+        cout << "CASE# " << caso << ":" << endl;
+
+        for (int i = 0; i < q; i++) {
             int achar;
             cin >> achar;
 
-            int l = 0;
-            int r = a.size()-1;
-            int res = 0;
+            int l = 0, r = n - 1;
+            int res = -1;
 
-            while (r >= l)
-            {
+            while (l <= r) {
                 int mid = (l + r) / 2;
-                if (a[mid] == achar)
-                {
+                if (a[mid] == achar) {
                     res = mid;
                     r = mid - 1;
-                }
-                else if (achar > a[mid])
-                {
+                } else if (achar > a[mid]) {
                     l = mid + 1;
-                }
-                else
-                {
+                } else {
                     r = mid - 1;
                 }
             }
-            cout << "CASE# " << q << ":" << endl;
 
-            if (res == 0)
-            {
+            if (res == -1)
                 cout << achar << " not found" << endl;
-            }
             else
-            {
                 cout << achar << " found at " << res + 1 << endl;
-            }
         }
+
+        caso++;
     }
 
     return 0;
