@@ -1,3 +1,4 @@
+//https://codeforces.com/problemset/problem/600/B
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -31,6 +32,7 @@ int main(){
     }
     sort(arrayA.begin(), arrayA.end());
     vector <int> ocorrencias;
+    int upperBound = 0;
     for(int b: arrayB){
         
         int l = 0;
