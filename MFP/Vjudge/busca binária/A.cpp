@@ -25,12 +25,8 @@ int main(){
         arrayB.push_back(b);
     }
     
-    for(int b: arrayB){
-        for(int a: arrayA){
-
-        }
-    }
     sort(arrayA.begin(), arrayA.end());
+    
     vector <int> ocorrencias;
     int upperBound = 0;
     for(int b: arrayB){
